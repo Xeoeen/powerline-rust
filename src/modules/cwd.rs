@@ -47,7 +47,7 @@ impl<S: CwdScheme> Module for Cwd<S> {
 
 		let mut cwd = current_dir.to_str().unwrap();
 
-		if let Some(home_path) = env::home_dir() {
+		if let Some(home_path) = dirs::home_dir() {
 			let home_str = home_path.to_str().unwrap();
 
 			if cwd.starts_with(home_str) {

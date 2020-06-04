@@ -6,6 +6,7 @@ edition = "2018"
 
 [dependencies]
 users = "0.10"
+dirs = "2.0.2"
 libc = "0.2"
 hostname = "0.3"
 git2 = { version = "0.13", optional = true, default-features = false }

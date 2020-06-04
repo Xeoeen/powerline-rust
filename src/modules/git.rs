@@ -95,7 +95,11 @@ impl<S: GitScheme> Module for Git<S> {
 			(S::GIT_REPO_CLEAN_FG, S::GIT_REPO_CLEAN_BG)
 		};
 
-		segments.push(Segment::simple(format!(" {} ", stats.branch_name), branch_fg, branch_bg));
+		segments.push(Segment::simple(
+			format!(" {} {} ", '\u{E0A0}', stats.branch_name),
+			branch_fg,
+			branch_bg,
+		));
 
 		let mut add_elem = |count, symbol, fg, bg| {
 			if count > 1 {
